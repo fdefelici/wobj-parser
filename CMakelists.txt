@@ -1,0 +1,15 @@
+cmake_minimum_required(VERSION 3.18)
+project(WObjParser LANGUAGES C)
+
+file(GLOB SOURCES "tests/*.c" "tests/*.h")
+file(GLOB HEADERS "./*.h")
+
+add_executable(WObjParser ${SOURCES} ${HEADERS})
+target_include_directories(WObjParser PRIVATE tests/ PRIVATE ./)
+
+# Post build: Copy Resources to bin
+set(ResourcesPath ${CMAKE_CURRENT_SOURCE_DIR}/resources)
+add_custom_command(TARGET WObjParser POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E cmake_echo_color --cyan "Copy Resources..."
+        COMMAND ${CMAKE_COMMAND} -E copy_directory ${ResourcesPath} $<TARGET_FILE_DIR:WObjParser>/resources
+)
