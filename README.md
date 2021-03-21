@@ -10,7 +10,7 @@ wobj* obj = wobj_from_file("resources/quad.obj");
 
 then access obj data reading individually obj components such as vertex position, normals, texture coordinates or read then in form of triangles
 
-| Look at the [unit tests](./tests) for usage insight 
+> Look at the [unit tests](./tests) for usage insight 
 
 # Development
 * C11 compliant
