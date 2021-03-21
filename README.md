@@ -15,3 +15,4 @@ then access obj data reading individually obj components such as vertex position
 # Development
 * C11 compliant
 * Unit Test written using [clove](https://github.com/fdefelici/clove) library
+* Project managed with [cmake](https://cmake.org/)
